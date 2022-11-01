@@ -1,0 +1,34 @@
+.new-todo {
+  margin: 2rem auto 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #96f2d7;
+  border-radius: 9px;
+}
+
+.new-todo form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.new-todo form .form-input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-todo form button {
+  background-color: inherit;
+  border: #ced4da 1px solid;
+  transition: all 0.4s;
+}
+
+.new-todo form button:hover {
+  cursor: pointer;
+  background-color: #ced4da;
+}

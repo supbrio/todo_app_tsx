@@ -1,0 +1,30 @@
+.main-navigation {
+  padding: 0 2.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #63e6be;
+  border-radius: 0 0 9px 9px;
+}
+
+.main-navigation .right-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-navigation a {
+  text-decoration: none;
+  color: black;
+  padding: 2rem 1rem;
+  font-size: 2.2rem;
+  transition: all 0.4s;
+  border-radius: 9px;
+}
+
+.main-navigation a:hover,
+.main-navigation a:active,
+.main-navigation a.active {
+  cursor: pointer;
+  background-color: #96f2d7;
+  color: inherit;
+}

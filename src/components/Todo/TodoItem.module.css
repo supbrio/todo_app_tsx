@@ -1,0 +1,74 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #96f2d7;
+  border-radius: 9px;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.todo .todo-text {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.todo .title {
+  display: flex;
+}
+
+.todo .description {
+  display: flex;
+}
+
+.todo .todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.todo button {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4rem;
+  width: 2.4rem;
+  border: none;
+  transition: all 0.4s;
+}
+
+.todo button:hover {
+  cursor: pointer;
+  background-color: #ced4da;
+}
+
+.todo button.check {
+  color: #2b8a3e;
+}
+
+.todo button.check:hover {
+  color: #40c057;
+}
+
+.todo button.remove {
+  color: #c92a2a;
+}
+
+.todo button.remove:hover {
+  color: #f03e3e;
+}
+
+.todo button.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo .todo-text .done {
+  text-decoration: line-through;
+}
+.todo .todo-actions .check.done {
+  background-color: #ced4da !important;
+}
