@@ -4,6 +4,7 @@ import HomeView from "../../../views/HomeView";
 import TodoListView from "../../../views/TodoListView";
 import TodoView from "../../../views/TodoView";
 import NewTodoView from "../../../views/NewTodoView";
+import SettingsView from "../../../views/SettingsView";
 
 const AnimatedRoutes: FC = () => {
   return (
@@ -12,7 +13,7 @@ const AnimatedRoutes: FC = () => {
       <Route path="/todos" element={<TodoListView />} />
       <Route path="/todos/:todoId" element={<TodoView />} />
       <Route path="/newtodo" element={<NewTodoView />} />
-      <Route path="/settings" element={<HomeView />} />
+      <Route path="/settings" element={<SettingsView />} />
     </Routes>
   );
 };

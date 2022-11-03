@@ -19,5 +19,7 @@ export const useInput = (definer: string) => {
     inputError,
     inputValue,
     inputChangeHandler,
+    setInputValue,
+    setInputError,
   };
 };

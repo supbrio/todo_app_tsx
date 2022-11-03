@@ -2,31 +2,49 @@ import { FC } from "react";
 import styles from "./NewTodo.module.css";
 import Container from "../UI/Container/Container";
 import { useInput } from "../../hooks/useInput";
+import { useAppDispatch } from "../../hooks/appTypes";
+import { addTodo } from "../../features/todo-slice";
 
 const NewTodo: FC = () => {
+  const dispatch = useAppDispatch();
   const {
     inputError: titleError,
     inputValue: titleValue,
     inputChangeHandler: titleChangeHandler,
+    setInputValue: setTitleValue,
+    setInputError: setTitleError,
   } = useInput("Title");
 
   const {
     inputError: descriptionError,
     inputValue: descriptionValue,
     inputChangeHandler: descriptionChangeHandler,
+    setInputValue: setDescriptionValue,
+    setInputError: setDescriptionError,
   } = useInput("Description");
 
   const newTodoSubmitHandler = (e: any) => {
     e.preventDefault();
 
     if (descriptionValue === "" || titleValue === "") {
+      titleValue === ""
+        ? setTitleError("Title field cannot be empty!")
+        : setTitleError(null);
+      descriptionValue === ""
+        ? setDescriptionError("Description field cannot be empty!")
+        : setDescriptionError(null);
       return;
     }
-
-    console.log({
-      title: titleValue,
-      description: descriptionValue,
-    });
+    dispatch(
+      addTodo({
+        title: titleValue,
+        description: descriptionValue,
+      })
+    );
+    setTitleValue("");
+    setDescriptionValue("");
+    setTitleError(null);
+    setDescriptionError(null);
   };
 
   return (

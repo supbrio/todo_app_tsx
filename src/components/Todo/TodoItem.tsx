@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import styles from "./TodoItem.module.css";
-import todoModel from "../../models/todo/todoModel";
+import { todoModel } from "../../models/todo/todoModel";
 import { todoTimeStamp } from "../../hooks/todoTimeStamp";
 import { useAppDispatch } from "../../hooks/appTypes";
 import { changeDoneState, removeTodo } from "../../features/todo-slice";
@@ -12,6 +12,7 @@ interface TodoItemProps {
 
 const TodoItem: FC<TodoItemProps> = ({ todo, onOpenTodo }) => {
   const dispatch = useAppDispatch();
+
   const todoDoneHandler = () => {
     dispatch(changeDoneState(todo.id));
   };

@@ -1,4 +1,4 @@
-interface todoModel {
+export interface todoModel {
   id: number;
   title: string;
   description: string;
@@ -6,4 +6,13 @@ interface todoModel {
   done: boolean;
 }
 
-export default todoModel;
+export interface newTodoModel {
+  title: string;
+  description: string;
+}
+
+export interface editTodoModel {
+  id: number;
+  title: string;
+  description: string;
+}

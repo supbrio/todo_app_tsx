@@ -2,7 +2,7 @@ import { FC } from "react";
 import Container from "../UI/Container/Container";
 import TodoItem from "./TodoItem";
 import styles from "./TodoList.module.css";
-import todoModel from "../../models/todo/todoModel";
+import { todoModel } from "../../models/todo/todoModel";
 import { useNavigate } from "react-router";
 import { useAppSelector } from "../../hooks/appTypes";
 

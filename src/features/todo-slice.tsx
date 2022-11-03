@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "./store";
-import todoModel from "../models/todo/todoModel";
+import {
+  newTodoModel,
+  todoModel,
+  editTodoModel,
+} from "../models/todo/todoModel";
 
-// Define a type for the slice state
 interface TodosState {
   todos: todoModel[];
 }
 
-// Define the initial state using that type
 const initialState: TodosState = {
   todos: [
     {
@@ -44,15 +45,36 @@ const initialState: TodosState = {
 
 export const todoSlice = createSlice({
   name: "todos",
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
+    addTodo: (state, action: PayloadAction<newTodoModel>) => {
+      const { title, description } = action.payload;
+      const maxId = Math.max(...state.todos.map((todo: todoModel) => todo.id));
+
+      state.todos = state.todos.concat([
+        {
+          id: maxId + 1,
+          title,
+          description,
+          date: new Date(Date.now()).toISOString(),
+          done: false,
+        },
+      ]);
+    },
     changeDoneState: (state, action: PayloadAction<number>) => {
       const todoToChange = state.todos.find(
         (todo: todoModel) => todo.id === action.payload
       );
       if (todoToChange) {
         todoToChange.done = !todoToChange?.done;
+      }
+    },
+    editTodo: (state, action: PayloadAction<editTodoModel>) => {
+      const { id, title, description } = action.payload;
+      const todoToEdit = state.todos.find((todo: todoModel) => todo.id === id);
+      if (todoToEdit) {
+        todoToEdit.title = title;
+        todoToEdit.description = description;
       }
     },
     removeTodo: (state, action: PayloadAction<number>) => {
@@ -63,6 +85,7 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { changeDoneState, removeTodo } = todoSlice.actions;
+export const { addTodo, changeDoneState, editTodo, removeTodo } =
+  todoSlice.actions;
 
 export default todoSlice.reducer;

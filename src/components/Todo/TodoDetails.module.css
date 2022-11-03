@@ -1,0 +1,33 @@
+.todo-details {
+  width: 50%;
+  margin: 2rem auto 0 auto;
+  padding: 0 0 2rem 0;
+  display: flex;
+  background-color: #96f2d7;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 9px;
+}
+
+.todo-details .form-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-details .button-modify {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  border: 1px solid #ced4da;
+  transition: all 0.4s;
+}
+.todo-details .button-modify:hover {
+  cursor: pointer;
+  background-color: #ced4da;
+}
