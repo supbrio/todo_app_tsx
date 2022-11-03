@@ -1,5 +1,5 @@
 import { FC, FormEvent, useEffect, useState } from "react";
-import { todoModel } from "../../models/todo/todoModel";
+import { todoModel } from "../../models/todo/todoModels";
 import styles from "./TodoDetails.module.css";
 import { useParams } from "react-router";
 import { todoTimeStamp } from "../../hooks/todoTimeStamp";

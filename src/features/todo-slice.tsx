@@ -4,7 +4,7 @@ import {
   newTodoModel,
   todoModel,
   editTodoModel,
-} from "../models/todo/todoModel";
+} from "../models/todo/todoModels";
 
 interface TodosState {
   todos: todoModel[];

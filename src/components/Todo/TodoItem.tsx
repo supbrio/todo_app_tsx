@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./TodoItem.module.css";
-import { todoModel } from "../../models/todo/todoModel";
+import { todoModel } from "../../models/todo/todoModels";
 import { todoTimeStamp } from "../../hooks/todoTimeStamp";
 import { useAppDispatch } from "../../hooks/appTypes";
 import { changeDoneState, removeTodo } from "../../features/todo-slice";
