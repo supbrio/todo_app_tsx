@@ -3,7 +3,7 @@ import styles from "./NewTodo.module.css";
 import Container from "../UI/Container/Container";
 import { useInput } from "../../hooks/useInput";
 import { useAppDispatch } from "../../hooks/appTypes";
-import { addTodo } from "../../features/todo-slice";
+import { addTodo } from "../../features/todos/todoApiCalls";
 
 const NewTodo: FC = () => {
   const dispatch = useAppDispatch();

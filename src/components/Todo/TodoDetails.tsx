@@ -4,7 +4,7 @@ import styles from "./TodoDetails.module.css";
 import { useParams } from "react-router";
 import { todoTimeStamp } from "../../hooks/todoTimeStamp";
 import { useAppDispatch, useAppSelector } from "../../hooks/appTypes";
-import { editTodo } from "../../features/todo-slice";
+import { editTodo } from "../../features/todos/todoApiCalls";
 import { useInput } from "../../hooks/useInput";
 
 const TodoDetails: FC = () => {

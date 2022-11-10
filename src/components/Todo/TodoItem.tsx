@@ -3,7 +3,7 @@ import styles from "./TodoItem.module.css";
 import { todoModel } from "../../models/todo/todoModels";
 import { todoTimeStamp } from "../../hooks/todoTimeStamp";
 import { useAppDispatch } from "../../hooks/appTypes";
-import { changeDoneState, removeTodo } from "../../features/todo-slice";
+import { removeTodo, changeDoneState } from "../../features/todos/todoApiCalls";
 
 interface TodoItemProps {
   todo: todoModel;
